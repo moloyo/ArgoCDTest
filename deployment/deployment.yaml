@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: argocdtest
-        image: moloyo/argocdtest
+        image: moloyo/argocdtest:v1.0.1
         ports:
         - containerPort: 80
