@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocdtest
+spec:
+  selector:
+    matchLabels:
+      app: argocdtest
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: argocdtest
+    spec:
+      containers:
+      - name: argocdtest
+        image: moloyo/argocdtest
+        ports:
+        - containerPort: 80
