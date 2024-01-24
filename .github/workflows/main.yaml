@@ -9,11 +9,6 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - 
-        name: GitHub Tag Name example
-        run: |
-         echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
-         echo "Tag name from github.ref_name: ${{  github.ref_name }}"
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -31,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: moloyo/argocdtest:latest
+          tags: moloyo/argocdtest:${{ github.ref_name }}
